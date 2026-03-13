@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quizzy | Party Pixels</title>
+  <meta name="description" content="Quizzy is a browser trivia hub with categories, point-based quizzes, and quick score runs.">
+  <link rel="stylesheet" href="quizzy.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-logo" href="/index.html">Party Pixels</a>
+    <nav class="site-nav">
+      <a href="/index.html">Home</a>
+      <a href="/games.html">Games</a>
+      <a href="/quizzy.html" aria-current="page">Quizzy</a>
+      <a class="account-btn" href="/account.html">Login / Account</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero-card">
+      <div class="hero-copy">
+        <p class="eyebrow">PARTY PIXELS / QUIZZY</p>
+        <h1>Pick a category. Test your knowledge. Farm points.</h1>
+        <p>
+          Quizzy is a fast trivia playground with different categories, short runs,
+          score tracking, and a clean base you can expand into accounts, leaderboards,
+          daily quizzes, and category progression.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-box">
+            <span id="totalCategories">0</span>
+            <small>Categories</small>
+          </div>
+          <div class="stat-box">
+            <span id="totalQuizzes">0</span>
+            <small>Quizzes</small>
+          </div>
+          <div class="stat-box">
+            <span>+10</span>
+            <small>Per Correct</small>
+          </div>
+        </div>
+      </div>
+      <div class="hero-side">
+        <div class="hero-panel">
+          <p class="hero-panel__label">Your local best</p>
+          <div class="hero-panel__score" id="bestScoreValue">0</div>
+          <p class="hero-panel__meta" id="bestScoreMeta">No score yet. Go break something.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="browseSection">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">STEP 1</p>
+          <h2>Choose a category</h2>
+        </div>
+        <p class="section-note">Each category contains sample quizzes. Add as many as you want in <code>quizzy.js</code>.</p>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="section-block hidden" id="quizListSection">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">STEP 2</p>
+          <h2 id="quizListTitle">Choose a quiz</h2>
+        </div>
+        <button class="ghost-btn" id="backToCategoriesBtn" type="button">Back to categories</button>
+      </div>
+      <div class="quiz-list" id="quizList"></div>
+    </section>
+
+    <section class="section-block hidden" id="quizPlayerSection">
+      <div class="quiz-topbar">
+        <button class="ghost-btn" id="backToQuizListBtn" type="button">Back to quiz list</button>
+        <div class="quiz-runtime-meta">
+          <span id="progressText">Question 1 / 10</span>
+          <span id="scoreText">Score: 0</span>
+          <span id="streakText">Streak: 0</span>
+        </div>
+      </div>
+
+      <div class="quiz-player-card">
+        <p class="question-tag" id="questionCategory">Category</p>
+        <h2 class="question-title" id="questionText">Question text</h2>
+        <div class="answer-grid" id="answersGrid"></div>
+      </div>
+    </section>
+
+    <section class="section-block hidden" id="resultSection">
+      <div class="result-card">
+        <p class="section-kicker">RUN COMPLETE</p>
+        <h2 id="resultTitle">You scored 0 points</h2>
+        <p class="result-copy" id="resultCopy">Result flavor text.</p>
+
+        <div class="result-stats">
+          <div class="result-stat">
+            <span id="finalScore">0</span>
+            <small>Total score</small>
+          </div>
+          <div class="result-stat">
+            <span id="correctAnswers">0</span>
+            <small>Correct answers</small>
+          </div>
+          <div class="result-stat">
+            <span id="bestStreak">0</span>
+            <small>Best streak</small>
+          </div>
+        </div>
+
+        <div class="result-actions">
+          <button class="primary-btn" id="retryQuizBtn" type="button">Play again</button>
+          <button class="ghost-btn" id="resultBackBtn" type="button">Choose another quiz</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Quizzy starter pack for Party Pixels.</p>
+  </footer>
+
+  <script src="quizzy.js"></script>
+</body>
+</html>
